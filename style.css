@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: #000;
+  overflow: hidden;
+}
+
+.container__inputs input {
+  visibility: hidden;
+  display: none;
+}
+
+.container__buttons {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+  transform: translateX(-50%);
+}
+
+.container__buttons label {
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  opacity: 0.5;
+  border-radius: 20px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.container__inputs
+  input:nth-child(1):checked
+  ~ .container__buttons
+  label:nth-child(1),
+.container__inputs
+  input:nth-child(2):checked
+  ~ .container__buttons
+  label:nth-child(2),
+.container__inputs
+  input:nth-child(3):checked
+  ~ .container__buttons
+  label:nth-child(3) {
+  width: 50px;
+  opacity: 1;
+}
+
+.container__content {
+  position: relative;
+  width: 300vw;
+  display: flex;
+  transition: 0.5s;
+}
+
+.container__content .box {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container__content .box:nth-child(1) {
+  background: linear-gradient(90deg, #43cea2, #185a9d);
+}
+
+.container__content .box:nth-child(2) {
+  background: linear-gradient(90deg, #ff4e50, #f9d423);
+}
+
+.container__content .box:nth-child(3) {
+  background: linear-gradient(90deg, #9d50bb, #4d14aa);
+}
+
+.container__inputs input:nth-child(1):checked ~ .container__content {
+  left: 0;
+}
+
+.container__inputs input:nth-child(2):checked ~ .container__content {
+  left: -100vw;
+}
+
+.container__inputs input:nth-child(3):checked ~ .container__content {
+  left: -200vw;
+}
+
+.contentBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contentBox ion-icon {
+  font-size: 11em;
+  color: #fff;
+  --ionicon-stroke-width: 16px;
+}
+
+.contentBox h2 {
+  font-size: 3em;
+  color: #fff;
+}
+
+.contentBox p {
+  font-size: 1.2em;
+  color: #fff;
+  max-width: 800px;
+  text-align: center;
+}
+
+.contentBox button {
+  font-size: 1.2em;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 15px 35px;
+  background-color: #fff;
+  color: #333;
+  letter-spacing: 0.05em;
+  margin-top: 10px;
+  font-weight: 600;
+  border: none;
+  border-radius: 40px;
+  transition: 0.5s;
+}
+
+.contentBox button:hover {
+  letter-spacing: 0.2em;
+  cursor: pointer;
+}
